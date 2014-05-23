@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RestaurantTemplate</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="restuarant_name">Restaurant Name</string>
+    <string name="menu_text">Menu</string>
+    <string name="about_us_text">About Us</string>
+    <string name="special_offers_text">Special Offers</string>
+    <string name="place_an_order">Place An Order</string>
+    
+    <string name="menu_title">Menu Title</string>
+    
+    
+
+</resources>
