@@ -6,6 +6,7 @@ import java.util.List;
 public class MenuInfo {
 	public static ArrayList<String> myParentItems = new ArrayList<String>();
 	public static ArrayList<Object> myChildItems = new ArrayList<Object>();
+	public static String myPhoneNumber = "973-981-1170";
 
 	public MenuInfo(){
 		myParentItems.add("Appetizers");

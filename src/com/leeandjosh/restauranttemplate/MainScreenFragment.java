@@ -18,6 +18,19 @@ public class MainScreenFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, 
 			Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_main_screen, parent, false);
+		wireMenuButton(v);
+		Button contactButton = (Button) v.findViewById(R.id.order_button);
+		contactButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(getActivity(),ContactActivity.class);
+				startActivity(i);
+			}
+		});
+		return v; 
+	}
+	private void wireMenuButton(View v) {
 		Button menuButton = (Button) v.findViewById(R.id.menu_button);
 		menuButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -26,7 +39,6 @@ public class MainScreenFragment extends Fragment {
 				startActivity(i);
 			}
 		});
-		return v; 
 	}
 	
 }
