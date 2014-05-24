@@ -1,6 +1,7 @@
 package com.leeandjosh.restauranttemplate;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,7 +31,8 @@ public class MainScreenFragment extends Fragment {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getActivity(),DirectionsActivity.class);
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				Uri.parse("google.navigation:q=" + MenuInfo.myAddress);
 				startActivity(i);
 			}
 		});
@@ -53,8 +55,9 @@ public class MainScreenFragment extends Fragment {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getActivity(),ContactActivity.class);
-				startActivity(i);
+				Intent intent = new Intent(Intent.ACTION_DIAL);
+				intent.setData(Uri.parse("tel:"+MenuInfo.myPhoneNumber));
+				startActivity(intent);
 			}
 		});
 	}
