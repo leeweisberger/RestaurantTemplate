@@ -40,7 +40,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 			convertView = inflater.inflate(R.layout.menu_parent_elements, null);
 		}
 
-		textView = (TextView) convertView.findViewById(R.id.textView1);
+		textView = (TextView) convertView.findViewById(R.id.about_text);
 		textView.setText(child.get(childPosition));
 		return convertView;
 	}
