@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuInfo {
+	public static final String myAddress = "160+Ticonderoga+Terrace+Wayne+NJ";
 	public static ArrayList<String> myParentItems = new ArrayList<String>();
 	public static ArrayList<Object> myChildItems = new ArrayList<Object>();
 	public static String myPhoneNumber = "973-981-1170";

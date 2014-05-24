@@ -21,7 +21,19 @@ public class MainScreenFragment extends Fragment {
 		wireMenuButton(v);
 		wireContactButton(v);
 		wireAboutButton(v);
+		wireDirectionsButton(v);
 		return v; 
+	}
+	private void wireDirectionsButton(View v) {
+		Button directionsButton = (Button) v.findViewById(R.id.directions_button);
+		directionsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(getActivity(),DirectionsActivity.class);
+				startActivity(i);
+			}
+		});
 	}
 	private void wireAboutButton(View v) {
 		Button aboutButton = (Button) v.findViewById(R.id.about_us_button);

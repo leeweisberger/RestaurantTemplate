@@ -240,7 +240,7 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-int id action_settings 0x7f050044
+int id action_settings 0x7f050045
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
@@ -248,6 +248,7 @@ int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id default_activity_button 0x7f050028
 int id dialog 0x7f05000e
+int id directions_button 0x7f050043
 int id disableHome 0x7f050008
 int id dropdown 0x7f05000f
 int id edit_query 0x7f050030
@@ -260,7 +261,7 @@ int id homeAsUp 0x7f050005
 int id icon 0x7f05002a
 int id ifRoom 0x7f05000a
 int id image 0x7f050027
-int id list 0x7f050043
+int id list 0x7f050044
 int id listMode 0x7f050001
 int id list_item 0x7f050029
 int id menu_button 0x7f05003f
@@ -341,13 +342,14 @@ int string abc_searchview_description_submit 0x7f0a0007
 int string abc_searchview_description_voice 0x7f0a0008
 int string abc_shareactionprovider_share_with 0x7f0a000c
 int string abc_shareactionprovider_share_with_application 0x7f0a000b
-int string about_label 0x7f0a0016
+int string about_label 0x7f0a0017
 int string about_us_text 0x7f0a0011
 int string action_settings 0x7f0a000e
 int string app_name 0x7f0a000d
-int string menu_label 0x7f0a0015
+int string directions_text 0x7f0a0014
+int string menu_label 0x7f0a0016
 int string menu_text 0x7f0a0010
-int string menu_title 0x7f0a0014
+int string menu_title 0x7f0a0015
 int string place_an_order 0x7f0a0013
 int string restuarant_name 0x7f0a000f
 int string special_offers_text 0x7f0a0012
