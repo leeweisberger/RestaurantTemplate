@@ -12,6 +12,10 @@
     
     <string name="menu_title">Menu Title</string>
     
+    <string name="menu_label">Menu</string>
+    <string name="about_label">About Us</string>
+    
+    
     
 
 </resources>

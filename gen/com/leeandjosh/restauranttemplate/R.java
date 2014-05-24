@@ -1155,9 +1155,11 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
+        public static final int about_label=0x7f0a0016;
         public static final int about_us_text=0x7f0a0011;
         public static final int action_settings=0x7f0a000e;
         public static final int app_name=0x7f0a000d;
+        public static final int menu_label=0x7f0a0015;
         public static final int menu_text=0x7f0a0010;
         public static final int menu_title=0x7f0a0014;
         public static final int place_an_order=0x7f0a0013;
