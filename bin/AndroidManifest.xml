@@ -25,6 +25,9 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/menu_label" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainScreenActivity" />
         </activity>
         <activity
             android:name=".ContactActivity"
@@ -33,12 +36,14 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/about_label" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainScreenActivity" />
         </activity>
         <activity
             android:name=".DirectionsActivity"
             android:label="@string/app_name" >
         </activity>
-        
     </application>
 
 </manifest>
