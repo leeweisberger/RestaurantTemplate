@@ -30,7 +30,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 	public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 		
 		
-		List<MenuItem> menuItems = parentItems.get(groupPosition).getMenuItems();
+		List<MenuSelection> menuItems = parentItems.get(groupPosition).getMenuItems();
 		
 
 		TextView textView = null;

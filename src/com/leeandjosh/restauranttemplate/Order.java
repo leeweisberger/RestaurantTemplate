@@ -1,24 +1,18 @@
 package com.leeandjosh.restauranttemplate;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order implements Serializable{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1875753140347376308L;
-	private List<MenuItem> myMenuItems = new ArrayList<MenuItem>();
+public class Order{
+
+	private List<MenuSelection> myMenuItems = new ArrayList<MenuSelection>();
 	private int myTotalPrice=0;
-	
-	public void addItem(MenuItem item){
+	public static Order myOrder = new Order();
+	public void addItem(MenuSelection item){
 		myMenuItems.add(item);
 		myTotalPrice+=item.getPrice();
 	}
 	
-	public void removeItem(MenuItem item){
+	public void removeItem(MenuSelection item){
 		myMenuItems.remove(item);
 		myTotalPrice-=item.getPrice();
 	}
@@ -26,9 +20,11 @@ public class Order implements Serializable{
 	public int getTotalPrice(){
 		return myTotalPrice;
 	}
-	public List<MenuItem> getMenuItems(){
+	public List<MenuSelection> getMenuItems(){
 		return myMenuItems;
 	}
+
+	
 	
 	
 }

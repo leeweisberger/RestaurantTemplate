@@ -12,25 +12,25 @@ public class MenuInfo {
 
 	public MenuInfo() {
 		MenuCatagory appetizers = new MenuCatagory("Appetizers");
-		appetizers.addMenuItem(new MenuItem("Bruschetta", 8));
-		appetizers.addMenuItem(new MenuItem("Bruschetta", 8));
-		appetizers.addMenuItem(new MenuItem("Bruschetta", 8));
-		appetizers.addMenuItem(new MenuItem("Bruschetta", 8));
+		appetizers.addMenuItem(new MenuSelection("Bruschetta", 8));
+		appetizers.addMenuItem(new MenuSelection("Bruschetta", 8));
+		appetizers.addMenuItem(new MenuSelection("Bruschetta", 8));
+		appetizers.addMenuItem(new MenuSelection("Bruschetta", 8));
 		myParentItems.add(appetizers);
 		
 		MenuCatagory pizza = new MenuCatagory("Pizza");
-		pizza.addMenuItem(new MenuItem("Pepperoni", 15));
-		pizza.addMenuItem(new MenuItem("Pepperoni", 15));
-		pizza.addMenuItem(new MenuItem("Pepperoni", 15));
-		pizza.addMenuItem(new MenuItem("Pepperoni", 15));
-		pizza.addMenuItem(new MenuItem("Pepperoni", 15));
-		pizza.addMenuItem(new MenuItem("Pepperoni", 15));
+		pizza.addMenuItem(new MenuSelection("Pepperoni", 15));
+		pizza.addMenuItem(new MenuSelection("Pepperoni", 15));
+		pizza.addMenuItem(new MenuSelection("Pepperoni", 15));
+		pizza.addMenuItem(new MenuSelection("Pepperoni", 15));
+		pizza.addMenuItem(new MenuSelection("Pepperoni", 15));
+		pizza.addMenuItem(new MenuSelection("Pepperoni", 15));
 		myParentItems.add(pizza);
 		
 		MenuCatagory pasta = new MenuCatagory("Pasta");
-		pasta.addMenuItem(new MenuItem("Lasagna", 22));
-		pasta.addMenuItem(new MenuItem("Lasagna", 22));
-		pasta.addMenuItem(new MenuItem("Lasagna", 22));
+		pasta.addMenuItem(new MenuSelection("Lasagna", 22));
+		pasta.addMenuItem(new MenuSelection("Lasagna", 22));
+		pasta.addMenuItem(new MenuSelection("Lasagna", 22));
 		myParentItems.add(pasta);
 
 	}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="quanity_choice">[1,2,3]</integer-array>
+</resources>

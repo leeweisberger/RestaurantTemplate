@@ -5,18 +5,18 @@ import java.util.List;
 
 public class MenuCatagory {
 	private String myName;
-	private List<MenuItem> myMenuItems;
+	private List<MenuSelection> myMenuItems;
 	
 	public MenuCatagory(String name){
 		myName=name;
-		myMenuItems= new ArrayList<MenuItem>();
+		myMenuItems= new ArrayList<MenuSelection>();
 	}
 
-	public List<MenuItem> getMenuItems() {
+	public List<MenuSelection> getMenuItems() {
 		return myMenuItems;
 	}
 
-	public void addMenuItem(MenuItem item){
+	public void addMenuItem(MenuSelection item){
 		myMenuItems.add(item);
 	}
 

@@ -20,7 +20,6 @@
             android:layout_marginLeft="5dp"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
-      
             android:textStyle="bold" />
         
         

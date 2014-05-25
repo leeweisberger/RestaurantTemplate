@@ -1,10 +1,10 @@
 package com.leeandjosh.restauranttemplate;
 
-public class MenuItem {
+public class MenuSelection {
 	private int myPrice;
 	private String myName;
 	
-	public MenuItem(String name, int price){
+	public MenuSelection(String name, int price){
 		myPrice=price;
 		myName=name;
 	}

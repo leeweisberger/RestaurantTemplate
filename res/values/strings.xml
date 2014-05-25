@@ -15,10 +15,13 @@
     
     <string name="menu_label">Menu</string>
     <string name="about_label">About Us</string>
+    <string name="checkout_label">Checkout</string>
+    <string name="delivery_label">Delivery</string>
     
     <string name="added_to_order_toast">Added To Order</string>
     
     <string name="checkout">Checkout</string>
+    <string name="place_order">Place Order</string>
     
     
     

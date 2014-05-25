@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,7 +17,6 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 public class MenuFragment extends Fragment {
-	private Order myOrder = new Order();
 	public static final String EXTRA_ORDER_MENUFRAGMENT = "extra_order_menufragment";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,16 +43,6 @@ public class MenuFragment extends Fragment {
 		
 		adapter.setInflater((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE), getActivity());
 		expandableList.setAdapter(adapter);
-		
-		
-		
-		
-		
-		
-		
-			
-			
-		
 		expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 		
 			@Override
@@ -63,8 +51,7 @@ public class MenuFragment extends Fragment {
 				Toast.makeText(getActivity(),
 						R.string.added_to_order_toast,
 						Toast.LENGTH_SHORT).show();
-				myOrder.addItem(MenuInfo.myParentItems.get(arg2).getMenuItems().get(arg3));
-				
+				Order.myOrder.addItem(MenuInfo.myParentItems.get(arg2).getMenuItems().get(arg3));
 				return true;
 			}
 		});
@@ -80,9 +67,8 @@ public class MenuFragment extends Fragment {
 				NavUtils.navigateUpFromSameTask(getActivity());
 			return true;
 		}
-		else if(item.getItemId()==R.menu.fragment_menu){
+		else if(item.getItemId()==R.id.menu_checkout){
 			Intent i = new Intent(getActivity(),CheckoutActivity.class);
-			i.putExtra(EXTRA_ORDER_MENUFRAGMENT, myOrder);
 			startActivity(i);
 			return true;
 		}
