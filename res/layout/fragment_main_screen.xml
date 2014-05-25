@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
@@ -14,45 +14,42 @@
         android:typeface="serif" />
 
     <Button
-        android:id="@+id/menu_button"
-        android:layout_width="match_parent"
+        android:id="@+id/about_us_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/restaurant_name"
-        android:layout_marginTop="16dp"
-        android:text="@string/menu_text" />
+        android:layout_alignLeft="@+id/order_button"
+        android:layout_below="@+id/order_button"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/custon_aboutus_button" />
 
     <Button
         android:id="@+id/order_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/menu_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/place_an_order" />
+        android:layout_alignBaseline="@+id/menu_button"
+        android:layout_alignBottom="@+id/menu_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="56dp"
+        android:background="@drawable/custom_order_button" />
 
     <Button
-        android:id="@+id/about_us_button"
-        android:layout_width="match_parent"
+        android:id="@+id/menu_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/order_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/about_us_text" />
+        android:layout_below="@+id/restaurant_name"
+        android:layout_marginRight="29dp"
+        android:layout_marginTop="49dp"
+        android:layout_toLeftOf="@+id/order_button"
+        android:background="@drawable/custom_menu_button"
+        android:minWidth="48dip" />
 
     <Button
         android:id="@+id/special_offers_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/about_us_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/special_offers_text" />
+        android:layout_alignBaseline="@+id/about_us_button"
+        android:layout_alignBottom="@+id/about_us_button"
+        android:layout_alignLeft="@+id/menu_button"
+        android:background="@drawable/custom_offers_button" />
 
 </RelativeLayout>
