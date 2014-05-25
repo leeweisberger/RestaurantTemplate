@@ -1,27 +1,24 @@
 package com.leeandjosh.restauranttemplate;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ExpandableAdapter extends BaseExpandableListAdapter {
 
 	private Activity activity;
-	private ArrayList<Object> childtems;
 	private LayoutInflater inflater;
-	private ArrayList<String> parentItems, child;
+	private ArrayList<MenuCatagory> parentItems;
 
-	public ExpandableAdapter(ArrayList<String> parents, ArrayList<Object> childern) {
+	public ExpandableAdapter(ArrayList<MenuCatagory> parents) {
 		this.parentItems = parents;
-		this.childtems = childern;
 	}
 
 	public void setInflater(LayoutInflater inflater, Activity activity) {
@@ -31,8 +28,10 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-
-		child = (ArrayList<String>) childtems.get(groupPosition);
+		
+		
+		List<MenuItem> menuItems = parentItems.get(groupPosition).getMenuItems();
+		
 
 		TextView textView = null;
 
@@ -41,7 +40,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 		}
 
 		textView = (TextView) convertView.findViewById(R.id.about_text);
-		textView.setText(child.get(childPosition));
+		textView.setText(menuItems.get(childPosition).getName());
 		return convertView;
 	}
 
@@ -52,9 +51,9 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 			convertView = inflater.inflate(R.layout.menu_child_elements, null);
 		}
 
-		((CheckedTextView) convertView).setText(parentItems.get(groupPosition));
+		((CheckedTextView) convertView).setText(parentItems.get(groupPosition).getName());
 		((CheckedTextView) convertView).setChecked(isExpanded);
-
+		
 		return convertView;
 	}
 
@@ -70,12 +69,12 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getChildrenCount(int groupPosition) {
-		return ((ArrayList<String>) childtems.get(groupPosition)).size();
+		return parentItems.get(groupPosition).getMenuItems().size();
 	}
 
 	@Override
 	public Object getGroup(int groupPosition) {
-		return null;
+		return parentItems.get(groupPosition);
 	}
 
 	@Override
@@ -105,7 +104,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
-		return false;
+		return true;
 	}
 
 }

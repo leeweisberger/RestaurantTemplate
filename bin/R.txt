@@ -240,7 +240,7 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-int id action_settings 0x7f050045
+int id action_settings 0x7f050046
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
@@ -265,6 +265,7 @@ int id list 0x7f050044
 int id listMode 0x7f050001
 int id list_item 0x7f050029
 int id menu_button 0x7f05003f
+int id menu_item_checkout 0x7f050045
 int id middle 0x7f050012
 int id never 0x7f050009
 int id none 0x7f050010
@@ -328,7 +329,8 @@ int layout fragment_menu 0x7f03001a
 int layout menu_child_elements 0x7f03001b
 int layout menu_parent_elements 0x7f03001c
 int layout support_simple_spinner_dropdown_item 0x7f03001d
-int menu main_screen 0x7f0c0000
+int menu fragment_menu 0x7f0c0000
+int menu main_screen 0x7f0c0001
 int string abc_action_bar_home_description 0x7f0a0001
 int string abc_action_bar_up_description 0x7f0a0002
 int string abc_action_menu_overflow_description 0x7f0a0003
@@ -345,7 +347,9 @@ int string abc_shareactionprovider_share_with_application 0x7f0a000b
 int string about_label 0x7f0a0017
 int string about_us_text 0x7f0a0011
 int string action_settings 0x7f0a000e
+int string added_to_order_toast 0x7f0a0018
 int string app_name 0x7f0a000d
+int string checkout 0x7f0a0019
 int string directions_text 0x7f0a0014
 int string menu_label 0x7f0a0016
 int string menu_text 0x7f0a0010
