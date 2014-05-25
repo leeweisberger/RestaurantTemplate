@@ -1,11 +1,5 @@
 package com.leeandjosh.restauranttemplate;
 
-import java.io.Serializable;
-import java.util.UUID;
-
-import com.bignerdranch.android.criminalintent.CrimeFragment;
-import com.bignerdranch.android.criminalintent.CrimeLab;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
@@ -16,7 +10,7 @@ public class CheckoutFragment extends Fragment {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Order myOrder = (Order) getArguments().getSerializable(EXTRA_Order);
+		//Order myOrder = (Order) getArguments().getSerializable(EXTRA_Order);
 		setHasOptionsMenu(true);
 
 	}
@@ -25,7 +19,7 @@ public class CheckoutFragment extends Fragment {
 		Bundle args = new Bundle();
 		args.putInt(EXTRA_ORDER_PRICE, order.getTotalPrice());
 		
-		args.putSerializable(EXTRA_ORDER_ITEMS, order.getMenuItems());
+		//args.putSerializable(EXTRA_ORDER_ITEMS, order.getMenuItems());
 		CheckoutFragment fragment = new CheckoutFragment();
 		fragment.setArguments(args);
 		return fragment;

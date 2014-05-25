@@ -91,7 +91,8 @@ public class MenuFragment extends Fragment {
 			return true;
 		}
 		else if(item.getItemId()==R.menu.fragment_menu){
-			Intent i = new Intent(getActivity(),CheckoutActivity.class;
+			Intent i = new Intent(getActivity(),CheckoutActivity.class);
+			return true;
 		}
 		
 		else{

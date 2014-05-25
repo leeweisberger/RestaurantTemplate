@@ -981,11 +981,20 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int about_us_icon=0x7f020057;
+        public static final int custom_menu_button=0x7f020058;
+        public static final int custom_offers_button=0x7f020059;
+        public static final int custom_order_button=0x7f02005a;
+        public static final int custon_aboutus_button=0x7f02005b;
+        public static final int ic_launcher=0x7f02005c;
+        public static final int pizza_icon=0x7f02005d;
+        public static final int place_your_order=0x7f02005e;
+        public static final int pressed_pizza_icon=0x7f02005f;
+        public static final int special_offers_button=0x7f020060;
     }
     public static final class id {
         public static final int about_text=0x7f05003d;
-        public static final int about_us_button=0x7f050041;
+        public static final int about_us_button=0x7f05003f;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1021,7 +1030,7 @@ containing a value of this type.
         public static final int list=0x7f050044;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
-        public static final int menu_button=0x7f05003f;
+        public static final int menu_button=0x7f050041;
         public static final int menu_item_checkout=0x7f050045;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
