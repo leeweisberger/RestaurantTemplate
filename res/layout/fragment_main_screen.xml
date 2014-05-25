@@ -33,17 +33,6 @@
         android:background="@drawable/custom_order_button" />
 
     <Button
-        android:id="@+id/menu_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/restaurant_name"
-        android:layout_marginRight="29dp"
-        android:layout_marginTop="49dp"
-        android:layout_toLeftOf="@+id/order_button"
-        android:background="@drawable/custom_menu_button"
-        android:minWidth="48dip" />
-
-    <Button
         android:id="@+id/special_offers_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,5 +40,16 @@
         android:layout_alignBottom="@+id/about_us_button"
         android:layout_alignLeft="@+id/menu_button"
         android:background="@drawable/custom_offers_button" />
+
+    <Button
+        android:id="@+id/menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/restaurant_name"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="52dp"
+        android:layout_toLeftOf="@+id/order_button"
+        android:background="@drawable/custom_menu_button"
+        android:minWidth="48dip" />
 
 </RelativeLayout>
