@@ -9,6 +9,7 @@ public class CheckoutActivity extends SingleFragmentActivity {
 
 	@Override
 	protected Fragment createFragment() {
+		myOrder = (Order) getIntent().getSerializableExtra(MenuFragment.EXTRA_ORDER_MENUFRAGMENT);
 		return CheckoutFragment.newInstance(myOrder);
 	}
 

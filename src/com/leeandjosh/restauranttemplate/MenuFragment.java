@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 public class MenuFragment extends Fragment {
 	private Order myOrder = new Order();
+	public static final String EXTRA_ORDER_MENUFRAGMENT = "extra_order_menufragment";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,31 +51,20 @@ public class MenuFragment extends Fragment {
 		
 		
 		
-		expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+		
 			
-			@Override
-			public boolean onGroupClick(ExpandableListView arg0, View arg1, int arg2,
-					long arg3) {
-				if(!arg0.isGroupExpanded(arg2))
-						arg0.expandGroup(arg2);
-				else{
-					arg0.collapseGroup(arg2);
-				}
-				
 			
-				return true;
-			}
-		});
 		
 		expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 		
 			@Override
 			public boolean onChildClick(ExpandableListView arg0, View arg1, int arg2,
 					int arg3, long arg4) {
-				Log.d("MenuFragment.java", "testes");
 				Toast.makeText(getActivity(),
 						R.string.added_to_order_toast,
 						Toast.LENGTH_SHORT).show();
+				myOrder.addItem(MenuInfo.myParentItems.get(arg2).getMenuItems().get(arg3));
+				
 				return true;
 			}
 		});
@@ -92,6 +82,8 @@ public class MenuFragment extends Fragment {
 		}
 		else if(item.getItemId()==R.menu.fragment_menu){
 			Intent i = new Intent(getActivity(),CheckoutActivity.class);
+			i.putExtra(EXTRA_ORDER_MENUFRAGMENT, myOrder);
+			startActivity(i);
 			return true;
 		}
 		

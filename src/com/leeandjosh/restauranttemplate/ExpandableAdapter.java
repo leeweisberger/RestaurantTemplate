@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.CheckedTextView;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ExpandableAdapter extends BaseExpandableListAdapter {
@@ -51,20 +51,20 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
 			convertView = inflater.inflate(R.layout.menu_child_elements, null);
 		}
 
-		((CheckedTextView) convertView).setText(parentItems.get(groupPosition).getName());
-		((CheckedTextView) convertView).setChecked(isExpanded);
+		((TextView) convertView).setText(parentItems.get(groupPosition).getName());
 		
+//		((TextView) convertView).setChecked(isExpanded);
 		return convertView;
 	}
 
 	@Override
 	public Object getChild(int groupPosition, int childPosition) {
-		return null;
+		return parentItems.get(groupPosition).getMenuItems().get(childPosition);
 	}
 
 	@Override
 	public long getChildId(int groupPosition, int childPosition) {
-		return 0;
+		return childPosition;
 	}
 
 	@Override
