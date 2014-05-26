@@ -50,7 +50,7 @@ public class MainScreenFragment extends Fragment {
 		});
 	}
 	private void wireContactButton(View v) {
-		Button contactButton = (Button) v.findViewById(R.id.order_button);
+		Button contactButton = (Button) v.findViewById(R.id.contact_button);
 		contactButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -62,7 +62,7 @@ public class MainScreenFragment extends Fragment {
 		});
 	}
 	private void wireMenuButton(View v) {
-		Button menuButton = (Button) v.findViewById(R.id.menu_button);
+		Button menuButton = (Button) v.findViewById(R.id.order_button);
 		menuButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

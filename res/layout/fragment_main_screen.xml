@@ -14,50 +14,47 @@
         android:typeface="serif" />
 
     <Button
-        android:id="@+id/about_us_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/order_button"
-        android:layout_below="@+id/order_button"
-        android:layout_marginTop="29dp"
-        android:background="@drawable/custon_aboutus_button" />
-
-    <Button
         android:id="@+id/order_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/menu_button"
-        android:layout_alignBottom="@+id/menu_button"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="56dp"
+        android:layout_below="@+id/restaurant_name"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/custom_order_button" />
 
     <Button
-        android:id="@+id/menu_button"
+        android:id="@+id/about_us_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/restaurant_name"
-        android:layout_marginRight="29dp"
-        android:layout_marginTop="49dp"
-        android:layout_toLeftOf="@+id/order_button"
-        android:background="@drawable/custom_menu_button"
-        android:minWidth="48dip" />
+        android:layout_alignBottom="@+id/order_button"
+        android:layout_marginLeft="46dp"
+        android:layout_toRightOf="@+id/order_button"
+        android:background="@drawable/custon_aboutus_button" />
 
     <Button
         android:id="@+id/special_offers_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/about_us_button"
-        android:layout_alignBottom="@+id/about_us_button"
-        android:layout_alignLeft="@+id/menu_button"
+        android:layout_alignLeft="@+id/order_button"
+        android:layout_below="@+id/order_button"
+        android:layout_marginTop="16dp"
         android:background="@drawable/custom_offers_button" />
 
     <Button
         android:id="@+id/directions_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/special_offers_button"
+        android:layout_alignBottom="@+id/special_offers_button"
+        android:layout_alignLeft="@+id/about_us_button"
+        android:background="@drawable/custom_offers_button" />
+     <Button
+        android:id="@+id/contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/special_offers_button"
+        android:layout_alignLeft="@+id/special_offers_button"
+        android:layout_marginTop="16dp"
         android:background="@drawable/custom_offers_button" />
 
 </RelativeLayout>
