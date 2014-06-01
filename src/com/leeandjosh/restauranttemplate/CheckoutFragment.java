@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,8 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CheckoutFragment extends ListFragment {
-	private MenuSelection currentItem;
-	private CheckoutAdapter myAdapter;
+	private int updateSpinnerCheck;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +38,6 @@ public class CheckoutFragment extends ListFragment {
 		List<MenuSelection> menuList = new ArrayList<MenuSelection>();
 		menuList.addAll(Order.myOrder.getMenuItems().keySet());
 		CheckoutAdapter adapter = new CheckoutAdapter(menuList);
-		myAdapter = adapter;
 		setListAdapter(adapter);
 		setHasOptionsMenu(true);
 	}
@@ -54,6 +53,7 @@ public class CheckoutFragment extends ListFragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// If we weren't given a view, inflate one
+
 			if (convertView == null) {
 				convertView = getActivity().getLayoutInflater()
 						.inflate(R.layout.fragment_checkout, null);
@@ -64,7 +64,6 @@ public class CheckoutFragment extends ListFragment {
 
 			MenuSelection item = getItem(position);
 
-			currentItem=item;
 			TextView titleTextView = 
 					(TextView)convertView.findViewById(R.id.order_item_name);
 			titleTextView.setText(item.getName());
@@ -75,7 +74,7 @@ public class CheckoutFragment extends ListFragment {
 			Button removeButton = (Button) convertView.findViewById(R.id.remove_from_order);
 			removeButton.setOnClickListener(new RemoveOnClickListener(item));
 
-			
+			updateSpinnerCheck=0;
 			Spinner spinner = (Spinner) convertView.findViewById(R.id.quantity_choice);
 			// Create an ArrayAdapter using the string array and a default spinner layout
 			ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -87,7 +86,7 @@ public class CheckoutFragment extends ListFragment {
 			spinner.setAdapter(adapter);
 			spinner.setSelection(adapter.getPosition(Order.myOrder.getMenuItems().get(item).toString()));
 
-			spinner.setOnItemSelectedListener(new SpinnerActivity(item,this));
+			spinner.setOnItemSelectedListener(new SpinnerActivity(item));
 
 			return convertView;
 		}
@@ -120,18 +119,19 @@ public class CheckoutFragment extends ListFragment {
 
 	public class SpinnerActivity extends Activity implements OnItemSelectedListener {
 		private MenuSelection myItem;
-		private CheckoutAdapter myAdapter;
-		public SpinnerActivity(MenuSelection item, CheckoutAdapter checkoutAdapter){
+		public SpinnerActivity(MenuSelection item){
 			myItem=item;
-			myAdapter = checkoutAdapter;
 		}
 		public void onItemSelected(AdapterView<?> parent, View view, 
 				int pos, long id) {
 			// An item was selected. You can retrieve the selected item using
 			// parent.getItemAtPosition(pos)
-			String quantity = (String) parent.getItemAtPosition(pos);
-			Order.myOrder.updateQuantity(myItem, Integer.valueOf(quantity));
-			//	    	myAdapter.notifyDataSetChanged();
+			updateSpinnerCheck+=1;
+			if(updateSpinnerCheck>1){
+				String quantity = (String) parent.getItemAtPosition(pos);
+				Order.myOrder.updateQuantity(myItem, Integer.valueOf(quantity));
+				updateAdapter();
+			}
 
 		}
 
