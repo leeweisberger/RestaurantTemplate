@@ -17,7 +17,7 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
-        public static final int quanity_choice=0x7f0c0000;
+        public static final int quantity_choice=0x7f0c0000;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1046,11 +1046,12 @@ containing a value of this type.
         public static final int normal=0x7f050000;
         public static final int order_button=0x7f050047;
         public static final int order_item_name=0x7f05003e;
-        public static final int order_item_ordered=0x7f050040;
         public static final int order_item_price=0x7f05003f;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
+        public static final int quantity_choice=0x7f050040;
         public static final int radio=0x7f05002f;
+        public static final int remove_from_order=0x7f050041;
         public static final int restaurant_name=0x7f050046;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
@@ -1067,7 +1068,6 @@ containing a value of this type.
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
         public static final int special_offers_button=0x7f050049;
-        public static final int spinner1=0x7f050041;
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
