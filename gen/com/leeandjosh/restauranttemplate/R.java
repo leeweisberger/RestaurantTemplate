@@ -1187,6 +1187,7 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000e;
         public static final int added_to_order_toast=0x7f0a001a;
         public static final int app_name=0x7f0a000d;
+        public static final int call_us_text=0x7f0a0013;
         public static final int checkout=0x7f0a001b;
         public static final int checkout_label=0x7f0a0018;
         public static final int delivery_label=0x7f0a0019;
@@ -1194,7 +1195,6 @@ containing a value of this type.
         public static final int menu_label=0x7f0a0016;
         public static final int menu_text=0x7f0a0010;
         public static final int menu_title=0x7f0a0015;
-        public static final int place_an_order=0x7f0a0013;
         public static final int place_order=0x7f0a001c;
         public static final int restuarant_name=0x7f0a000f;
         public static final int special_offers_text=0x7f0a0012;

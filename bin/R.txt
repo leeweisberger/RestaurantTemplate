@@ -371,6 +371,7 @@ int string about_us_text 0x7f0a0011
 int string action_settings 0x7f0a000e
 int string added_to_order_toast 0x7f0a001a
 int string app_name 0x7f0a000d
+int string call_us_text 0x7f0a0013
 int string checkout 0x7f0a001b
 int string checkout_label 0x7f0a0018
 int string delivery_label 0x7f0a0019
@@ -378,7 +379,6 @@ int string directions_text 0x7f0a0014
 int string menu_label 0x7f0a0016
 int string menu_text 0x7f0a0010
 int string menu_title 0x7f0a0015
-int string place_an_order 0x7f0a0013
 int string place_order 0x7f0a001c
 int string restuarant_name 0x7f0a000f
 int string special_offers_text 0x7f0a0012

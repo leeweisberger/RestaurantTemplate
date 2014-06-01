@@ -31,9 +31,9 @@ public class MainScreenFragment extends Fragment {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				Uri.parse("google.navigation:q=" + MenuInfo.myAddress);
-				startActivity(i);
+				String url = "http://maps.google.com/maps?daddr="+MenuInfo.myAddress;
+				Intent intent = new Intent(android.content.Intent.ACTION_VIEW,  Uri.parse(url));
+				startActivity(intent);
 			}
 		});
 	}

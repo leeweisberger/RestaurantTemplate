@@ -29,7 +29,7 @@
         android:layout_alignBottom="@+id/order_button"
         android:layout_marginLeft="46dp"
         android:layout_toRightOf="@+id/order_button"
-        android:background="@drawable/custon_aboutus_button" />
+        android:text="@string/about_label" />
 
     <Button
         android:id="@+id/special_offers_button"
@@ -38,7 +38,7 @@
         android:layout_alignLeft="@+id/order_button"
         android:layout_below="@+id/order_button"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custom_offers_button" />
+        android:text="@string/special_offers_text" />
 
     <Button
         android:id="@+id/directions_button"
@@ -47,14 +47,15 @@
         android:layout_alignBaseline="@+id/special_offers_button"
         android:layout_alignBottom="@+id/special_offers_button"
         android:layout_alignLeft="@+id/about_us_button"
-        android:background="@drawable/custom_offers_button" />
-     <Button
+        android:text="@string/directions_text" />
+
+    <Button
         android:id="@+id/contact_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/special_offers_button"
         android:layout_alignLeft="@+id/special_offers_button"
+        android:layout_below="@+id/special_offers_button"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custom_offers_button" />
+        android:text="@string/call_us_text" />
 
 </RelativeLayout>
