@@ -1,19 +1,26 @@
 package com.leeandjosh.restauranttemplate;
 
+import java.io.IOException;
+
 import android.annotation.TargetApi;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class DeliveryFragment extends Fragment {
+
 	private String myDeliveryName;
 	private String myDeliveryNumber;
 	private String myDeliveryAddress;
@@ -100,6 +107,20 @@ public class DeliveryFragment extends Fragment {
 				myDeliveryInstructions=arg0.toString();
 			}
 		});
+
+		TextView totalPrice = (TextView) v.findViewById(R.id.total_price);
+		totalPrice.setText(Order.myOrder.getTotalPrice()+"");
+
+		Button placeOrder = (Button) v.findViewById(R.id.place_order);
+		placeOrder.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				new FetchItemsTask().execute();
+
+			}
+		});
+
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
@@ -116,4 +137,12 @@ public class DeliveryFragment extends Fragment {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+	private class FetchItemsTask extends AsyncTask<Void,Void,Void> {
+		@Override
+		protected Void doInBackground(Void... params) {
+			new OrderPoster().fetchItems();
+			return null;
+		}
+	}
+
 }

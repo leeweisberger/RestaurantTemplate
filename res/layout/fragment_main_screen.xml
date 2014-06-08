@@ -1,61 +1,47 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="match_parent"
+    android:background="@layout/main_screen_background" >
 
-    <TextView
-        android:id="@+id/restaurant_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:text="@string/restuarant_name"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/order_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/restaurant_name"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="56dp"
-        android:background="@drawable/custom_order_button" />
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/restuarant_name"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
-    <Button
-        android:id="@+id/about_us_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/order_button"
-        android:layout_marginLeft="46dp"
-        android:layout_toRightOf="@+id/order_button"
-        android:text="@string/about_label" />
+        <Button
+            android:id="@+id/order_button"
+            style="@style/MenuButton"
+            android:text="@string/menu_label" />
 
-    <Button
-        android:id="@+id/special_offers_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/order_button"
-        android:layout_below="@+id/order_button"
-        android:layout_marginTop="16dp"
-        android:text="@string/special_offers_text" />
+        <Button
+            android:id="@+id/about_button"
+            style="@style/MenuButton"
+            android:text="@string/about_label" />
 
-    <Button
-        android:id="@+id/directions_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/special_offers_button"
-        android:layout_alignBottom="@+id/special_offers_button"
-        android:layout_alignLeft="@+id/about_us_button"
-        android:text="@string/directions_text" />
+        <Button
+            android:id="@+id/special_offers_button"
+            style="@style/MenuButton"
+            android:text="@string/special_offers_text" />
 
-    <Button
-        android:id="@+id/contact_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/special_offers_button"
-        android:layout_below="@+id/special_offers_button"
-        android:layout_marginTop="16dp"
-        android:text="@string/call_us_text" />
+        <Button
+            android:id="@+id/directions_button"
+            style="@style/MenuButton"
+            android:text="@string/directions_text" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/contact_button"
+            style="@style/MenuButton"
+            android:text="@string/call_us_text" />
+    </LinearLayout>
+
+</ScrollView>

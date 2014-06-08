@@ -25,7 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CheckoutFragment extends ListFragment {
-	private int updateSpinnerCheck;
+	private int updateSpinner;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,6 +35,7 @@ public class CheckoutFragment extends ListFragment {
 
 	}
 	protected void updateAdapter() {
+		updateSpinner--;
 		List<MenuSelection> menuList = new ArrayList<MenuSelection>();
 		menuList.addAll(Order.myOrder.getMenuItems().keySet());
 		CheckoutAdapter adapter = new CheckoutAdapter(menuList);
@@ -53,7 +54,6 @@ public class CheckoutFragment extends ListFragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// If we weren't given a view, inflate one
-
 			if (convertView == null) {
 				convertView = getActivity().getLayoutInflater()
 						.inflate(R.layout.fragment_checkout, null);
@@ -74,7 +74,7 @@ public class CheckoutFragment extends ListFragment {
 			Button removeButton = (Button) convertView.findViewById(R.id.remove_from_order);
 			removeButton.setOnClickListener(new RemoveOnClickListener(item));
 
-			updateSpinnerCheck=0;
+
 			Spinner spinner = (Spinner) convertView.findViewById(R.id.quantity_choice);
 			// Create an ArrayAdapter using the string array and a default spinner layout
 			ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -85,8 +85,9 @@ public class CheckoutFragment extends ListFragment {
 
 			spinner.setAdapter(adapter);
 			spinner.setSelection(adapter.getPosition(Order.myOrder.getMenuItems().get(item).toString()));
-
+			updateSpinner--;
 			spinner.setOnItemSelectedListener(new SpinnerActivity(item));
+
 
 			return convertView;
 		}
@@ -126,12 +127,15 @@ public class CheckoutFragment extends ListFragment {
 				int pos, long id) {
 			// An item was selected. You can retrieve the selected item using
 			// parent.getItemAtPosition(pos)
-			updateSpinnerCheck+=1;
-			if(updateSpinnerCheck>1){
+			
+			updateSpinner++;
+			Log.d("hangK", updateSpinner+"");
+			if(updateSpinner>=0){
 				String quantity = (String) parent.getItemAtPosition(pos);
 				Order.myOrder.updateQuantity(myItem, Integer.valueOf(quantity));
 				updateAdapter();
 			}
+
 
 		}
 
@@ -149,6 +153,7 @@ public class CheckoutFragment extends ListFragment {
 		@Override
 		public void onClick(View v){
 			Order.myOrder.removeItem(myItem);
+			updateSpinner++;
 			updateAdapter();
 		}
 

@@ -31,11 +31,27 @@
         android:hint="Phone Number"
         android:inputType="phone" />
 
+    
     <EditText
         android:id="@+id/delivery_instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Special Instructions" />
+
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/place_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/place_order" />
 
 </LinearLayout>

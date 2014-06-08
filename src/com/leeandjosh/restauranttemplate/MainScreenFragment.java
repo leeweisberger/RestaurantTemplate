@@ -38,7 +38,7 @@ public class MainScreenFragment extends Fragment {
 		});
 	}
 	private void wireAboutButton(View v) {
-		Button aboutButton = (Button) v.findViewById(R.id.about_us_button);
+		Button aboutButton = (Button) v.findViewById(R.id.about_button);
 		aboutButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
