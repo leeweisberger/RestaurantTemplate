@@ -1,7 +1,6 @@
 package com.leeandjosh.restauranttemplate;
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;

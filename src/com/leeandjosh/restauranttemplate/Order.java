@@ -8,10 +8,10 @@ public class Order{
 	private Map<MenuSelection,Integer> myMenuItems = new HashMap<MenuSelection,Integer>();
 	public static Order myOrder = new Order();
 	public void addItem(MenuSelection item){
-		if(!myMenuItems.keySet().contains(item)){
+		if(findInOrder(item)==null){
 			myMenuItems.put(item, 0);
 		}
-		myMenuItems.put(item, myMenuItems.get(item)+1);
+		myMenuItems.put(findInOrder(item), myMenuItems.get(findInOrder(item))+1);
 	}
 
 	public int getTotalPrice(){
@@ -36,6 +36,14 @@ public class Order{
 			order+=item.getName() + " : " + myMenuItems.get(item);
 		}
 		return order;
+	}
+	
+	private MenuSelection findInOrder(MenuSelection item){
+		for(MenuSelection selection:myMenuItems.keySet()){
+			if(selection.getName().equals(item.getName()))
+				return selection;
+		}
+		return null;
 	}
 
 

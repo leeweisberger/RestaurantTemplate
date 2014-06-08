@@ -2,7 +2,7 @@ package com.leeandjosh.restauranttemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,10 +30,18 @@ public class CheckoutFragment extends ListFragment {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		updateAdapter();
 		setRetainInstance(true);
+	}
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 
-
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		updateAdapter();
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+		}
+		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 	protected void updateAdapter() {
 		updateSpinner--;
