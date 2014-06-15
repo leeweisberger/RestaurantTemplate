@@ -28,6 +28,7 @@ public class OrderPlacedFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
+				Order.myOrder.resetOrder();
 				Intent i = new Intent(getActivity(),MainScreenActivity.class);
 				startActivity(i);
 			}
