@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.util.Log;
 
 public class OrderPoster {
-	private static String URL = "http://10.245.1.114:8080/hello/";
+	private static String URL = "http://10.245.1.114:8080/Your_Restaurant/";
 
 	byte[] getUrlBytes(String urlSpec) throws IOException {
 		URL url = new URL(urlSpec);
@@ -42,10 +42,13 @@ public class OrderPoster {
 			String url = Uri.parse(URL).buildUpon()
 					.appendQueryParameter("price", "$"+Order.myOrder.getTotalPrice())
 					.appendQueryParameter("order", Order.myOrder.toString())
+					.appendQueryParameter("name",Order.myOrder.getDeliveryInfo("Name"))
+					.appendQueryParameter("phone",Order.myOrder.getDeliveryInfo("Phone"))
+					.appendQueryParameter("address",Order.myOrder.getDeliveryInfo("Address"))
+					.appendQueryParameter("instructions",Order.myOrder.getDeliveryInfo("Instructions"))	
 					.build().toString();
 
 			String xmlString = getUrl(url);
-			Log.i("testes", "Received xml: " + xmlString);
 		} catch (IOException ioe) {
 			Log.e("testes", "Failed to fetch items", ioe);
 		}

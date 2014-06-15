@@ -8,9 +8,11 @@
         android:id="@+id/delivery_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/editbox_dropdown_background_dark"
         android:ems="10"
         android:hint="Full Name"
-        android:inputType="textPersonName" >
+        android:inputType="textPersonName" 
+        android:textSize="24sp">
 
         <requestFocus />
     </EditText>
@@ -19,39 +21,36 @@
         android:id="@+id/deliver_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/editbox_dropdown_background_dark"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textPostalAddress" />
+        android:inputType="textPostalAddress" 
+        android:textSize="24sp"/>
 
     <EditText
         android:id="@+id/delivery_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/editbox_dropdown_background_dark"
         android:ems="10"
         android:hint="Phone Number"
-        android:inputType="phone" />
+        android:inputType="phone" 
+        android:textSize="24sp"/>
 
-    
     <EditText
         android:id="@+id/delivery_instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/editbox_dropdown_background_dark"
         android:ems="10"
-        android:hint="Special Instructions" />
-
-    <TextView
-        android:id="@+id/total_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="36dp"
-        android:text="TextView" />
+        android:hint="Special Instructions" 
+        android:textSize="24sp"/>
 
     <Button
+        style="@style/MenuButton"
         android:id="@+id/place_order"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/place_order" />
+        android:text="@string/place_order" 
+        android:layout_marginTop="30dp"/>
 
 </LinearLayout>

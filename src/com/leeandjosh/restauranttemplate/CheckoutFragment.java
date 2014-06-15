@@ -78,7 +78,7 @@ public class CheckoutFragment extends ListFragment {
 			titleTextView.setText(item.getName());
 			TextView priceTextView = 
 					(TextView)convertView.findViewById(R.id.order_item_price);
-			priceTextView.setText(Order.myOrder.getMenuItems().get(item) * item.getPrice() + "");
+			priceTextView.setText("$"+Order.myOrder.getMenuItems().get(item) * item.getPrice() + ".00");
 
 			Button removeButton = (Button) convertView.findViewById(R.id.remove_from_order);
 			removeButton.setOnClickListener(new RemoveOnClickListener(item));
@@ -87,7 +87,7 @@ public class CheckoutFragment extends ListFragment {
 			Spinner spinner = (Spinner) convertView.findViewById(R.id.quantity_choice);
 			// Create an ArrayAdapter using the string array and a default spinner layout
 			ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-					R.array.quantity_choice, android.R.layout.simple_spinner_item);
+					R.array.quantity_choice, R.layout.spinner_layout);
 			// Specify the layout to use when the list of choices appears
 			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			// Apply the adapter to the spinner

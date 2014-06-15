@@ -6,6 +6,7 @@ import java.util.Map;
 public class Order{
 
 	private Map<MenuSelection,Integer> myMenuItems = new HashMap<MenuSelection,Integer>();
+	private Map<String,String> myDeliveryInfo = new HashMap<String,String>();
 	public static Order myOrder = new Order();
 	public void addItem(MenuSelection item){
 		if(findInOrder(item)==null){
@@ -33,7 +34,7 @@ public class Order{
 	public String toString(){
 		String order="";
 		for(MenuSelection item :myMenuItems.keySet()){
-			order+=item.getName() + " : " + myMenuItems.get(item);
+			order+=item.getName() + " : " + myMenuItems.get(item) + "    ;    ";
 		}
 		return order;
 	}
@@ -44,6 +45,17 @@ public class Order{
 				return selection;
 		}
 		return null;
+	}
+	
+	public void setDeliveryInfo(String catagory, String value){
+		myDeliveryInfo.put(catagory, value);
+	}
+	public String getDeliveryInfo(String catagory){
+		return myDeliveryInfo.get(catagory);
+	}
+	public void resetOrder(){
+		myMenuItems.clear();
+		myDeliveryInfo.clear();
 	}
 
 

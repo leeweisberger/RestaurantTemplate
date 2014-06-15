@@ -3,8 +3,7 @@
 
     <item
         android:id="@+id/menu_place_order"
-        android:icon="@android:drawable/ic_menu_add"
         android:showAsAction="withText|ifRoom"
-        android:title="@string/place_order"/>
+        android:title="@string/checkout"/>
 
 </menu>

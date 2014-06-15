@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/menu_checkout"
-        android:icon="@android:drawable/ic_menu_add"
-        android:showAsAction="withText|ifRoom"
-        android:title="@string/checkout"/>
+        
+        android:showAsAction="always|withText"
+        android:title="@string/view_cart"/>
 
 </menu>

@@ -1,8 +1,8 @@
 package com.leeandjosh.restauranttemplate;
 
-import java.io.IOException;
-
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,14 +10,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class DeliveryFragment extends Fragment {
 
@@ -51,6 +50,7 @@ public class DeliveryFragment extends Fragment {
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
 					int arg3) {
 				myDeliveryName=arg0.toString();
+				Order.myOrder.setDeliveryInfo("Name", myDeliveryName);
 			}	
 		});
 		EditText deliveryAddress=(EditText) v.findViewById(R.id.deliver_address);
@@ -69,7 +69,7 @@ public class DeliveryFragment extends Fragment {
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
 					int arg3) {
 				myDeliveryAddress=arg0.toString();
-			}
+				Order.myOrder.setDeliveryInfo("Address", myDeliveryAddress);			}
 		});
 		EditText deliveryPhone=(EditText) v.findViewById(R.id.delivery_phone);
 		deliveryPhone.addTextChangedListener(new TextWatcher(){
@@ -87,7 +87,7 @@ public class DeliveryFragment extends Fragment {
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
 					int arg3) {
 				myDeliveryNumber=arg0.toString();
-			}
+				Order.myOrder.setDeliveryInfo("Phone", myDeliveryNumber);			}
 		});
 		EditText deliveryInstructions=(EditText) v.findViewById(R.id.delivery_instructions);
 		deliveryInstructions.addTextChangedListener(new TextWatcher(){
@@ -105,18 +105,24 @@ public class DeliveryFragment extends Fragment {
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
 					int arg3) {
 				myDeliveryInstructions=arg0.toString();
-			}
+				Order.myOrder.setDeliveryInfo("Instructions", myDeliveryInstructions);			}
 		});
 
-		TextView totalPrice = (TextView) v.findViewById(R.id.total_price);
-		totalPrice.setText(Order.myOrder.getTotalPrice()+"");
+		
+		
 
 		Button placeOrder = (Button) v.findViewById(R.id.place_order);
+		placeOrder.setText("Total: $"+Order.myOrder.getTotalPrice()+".00"+ "\n" + "Place Order");
 		placeOrder.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				new FetchItemsTask().execute();
+				
+				Order.myOrder.resetOrder();
+				Intent i = new Intent(getActivity(),OrderPlacedActivity.class);
+				startActivity(i);
+				
+				
 
 			}
 		});

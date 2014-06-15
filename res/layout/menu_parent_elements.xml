@@ -1,28 +1,39 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:background="@android:color/black"
+    android:layout_height="wrap_content"
     
-    android:orientation="vertical"
+    style="@style/ListButton"
+    android:background="#949973"
     android:paddingLeft="40dp"
     tools:context=".MenuActivity" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/menu_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical" 
+            android:textColor="#000000">
+        </TextView>
 
         <TextView
-            android:id="@+id/about_text"
+            android:id="@+id/menu_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/menu_item_name" >
+
+        </TextView>
+
+        <Button
+            android:id="@+id/add_to_cart_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-        
-        
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_menu_add"
+            android:text="@string/add_to_cart"
+             />
+    
 
-</LinearLayout>
+</RelativeLayout>

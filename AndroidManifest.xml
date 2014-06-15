@@ -5,19 +5,20 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <application>
+    <application android:icon="@drawable/papa_icon">
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/CustomTheme" >
         <activity
             android:name="com.leeandjosh.restauranttemplate.MainScreenActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,9 @@
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/menu_label" >
+            android:label="@string/menu_label" 
+            android:theme="@style/CustomTheme">
+            
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainScreenActivity" />
@@ -37,28 +40,37 @@
         </activity>
         <activity
             android:name=".AboutActivity"
-            android:label="@string/about_label" >
+            android:label="@string/about_label" 
+            android:theme="@style/CustomTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainScreenActivity" />
         </activity>
         <activity
             android:name=".DirectionsActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/CustomTheme">
         </activity>
         <activity
             android:name=".CheckoutActivity"
-            android:label="@string/checkout_label" >
+            android:label="@string/checkout_label"
+            android:theme="@style/CustomTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MenuActivity" />
         </activity>
         <activity
             android:name=".DeliveryActivity"
-            android:label="@string/delivery_label" >
+            android:label="@string/delivery_label"
+            android:theme="@style/CustomTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CheckoutActivity" />
+        </activity>
+        <activity
+            android:name=".OrderPlacedActivity"
+            android:label="@string/app_name"
+            android:theme="@style/CustomTheme">
         </activity>
     </application>
 

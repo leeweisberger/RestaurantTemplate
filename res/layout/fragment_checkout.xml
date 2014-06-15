@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content" 
+    style="@style/ListButton">
 
     <TextView
         android:id="@+id/order_item_name"
@@ -10,22 +11,27 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
-        android:text="TextView" />
+        android:textColor="#000000" 
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/order_item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        
         android:layout_centerHorizontal="true"
-        android:text="TextView" />
+        android:layout_alignBaseline="@+id/order_item_name"
+        android:textColor="#000000"  
+        android:textSize="18sp"/>
 
     <Spinner
         android:id="@+id/quantity_choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/order_item_name"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/remove_from_order"

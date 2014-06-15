@@ -25,6 +25,7 @@ public class MenuFragment extends Fragment {
 		setRetainInstance(true);
 	}
 
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent,
@@ -34,28 +35,14 @@ public class MenuFragment extends Fragment {
 		ExpandableListView expandableList = (ExpandableListView) v
 				.findViewById(R.id.list);
 
-		expandableList.setDividerHeight(2);
-		expandableList.setGroupIndicator(null);
+		expandableList.setDividerHeight(1);
 		expandableList.setClickable(true);
 
 		ExpandableAdapter adapter = new ExpandableAdapter(MenuInfo.makeMenu());
 
 		adapter.setInflater(inflater, getActivity());
 		expandableList.setAdapter(adapter);
-		expandableList
-				.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-
-					@Override
-					public boolean onChildClick(ExpandableListView arg0,
-							View arg1, int arg2, int arg3, long arg4) {
-						Toast.makeText(getActivity(),
-								R.string.added_to_order_toast,
-								Toast.LENGTH_SHORT).show();
-						Order.myOrder.addItem(MenuInfo.makeMenu().get(arg2)
-								.getMenuItems().get(arg3));
-						return true;
-					}
-				});
+		
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
