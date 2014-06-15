@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/editbox_dropdown_background_dark"
-        android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName" 
         android:textSize="24sp">
@@ -22,7 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/editbox_dropdown_background_dark"
-        android:ems="10"
         android:hint="Address"
         android:inputType="textPostalAddress" 
         android:textSize="24sp"/>
@@ -32,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/editbox_dropdown_background_dark"
-        android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone" 
         android:textSize="24sp"/>
@@ -42,15 +39,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/editbox_dropdown_background_dark"
-        android:ems="10"
-        android:hint="Special Instructions" 
-        android:textSize="24sp"/>
+        android:hint="Special Instructions"
+        android:textSize="24sp" />
 
     <Button
         style="@style/MenuButton"
         android:id="@+id/place_order"
         android:layout_gravity="center_horizontal"
         android:text="@string/place_order" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
         android:layout_marginTop="30dp"/>
 
 </LinearLayout>
