@@ -117,7 +117,7 @@ public class DeliveryFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				
+				new FetchItemsTask().execute();
 				Order.myOrder.resetOrder();
 				Intent i = new Intent(getActivity(),OrderPlacedActivity.class);
 				startActivity(i);
