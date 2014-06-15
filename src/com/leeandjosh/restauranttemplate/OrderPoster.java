@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.util.Log;
 
 public class OrderPoster {
-	private static String URL = "http://10.245.1.114:8080/Your_Restaurant/";
+	private static String URL = "http://10.245.1.133:8080/Your_Restaurant/";
 
 	byte[] getUrlBytes(String urlSpec) throws IOException {
 		URL url = new URL(urlSpec);
