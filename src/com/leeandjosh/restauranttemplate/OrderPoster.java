@@ -1,17 +1,40 @@
 package com.leeandjosh.restauranttemplate;
 
 import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.Socket;
 import java.net.URL;
+import java.net.UnknownHostException;
 
 import android.net.Uri;
 import android.util.Log;
 
 public class OrderPoster {
-	private static String URL = "http://10.245.1.133:8080/Your_Restaurant/";
-
+	private static String URL = "134.193.112.95";
+	private static final int port = 12345;
+	Socket socket;
+	OutputStream os;
+	DataOutputStream dos;
+	
+	
+	public OrderPoster() {
+		try {
+			socket = new Socket(URL, port);
+			os = socket.getOutputStream();
+			dos = new DataOutputStream(os);
+		} catch (UnknownHostException e) {
+			System.err.println("Could not find server");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.err.println("Could not read/write to server");
+			e.printStackTrace();
+		}
+	}
+/*
 	byte[] getUrlBytes(String urlSpec) throws IOException {
 		URL url = new URL(urlSpec);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -36,21 +59,19 @@ public class OrderPoster {
 	public String getUrl(String urlSpec) throws IOException {
 		return new String(getUrlBytes(urlSpec));
 	}
-
-	public void fetchItems() {
+*/
+	public void sendItems() {
 		try {
-			String url = Uri.parse(URL).buildUpon()
-					.appendQueryParameter("price", "$"+Order.myOrder.getTotalPrice())
-					.appendQueryParameter("order", Order.myOrder.toString())
-					.appendQueryParameter("name",Order.myOrder.getDeliveryInfo("Name"))
-					.appendQueryParameter("phone",Order.myOrder.getDeliveryInfo("Phone"))
-					.appendQueryParameter("address",Order.myOrder.getDeliveryInfo("Address"))
-					.appendQueryParameter("instructions",Order.myOrder.getDeliveryInfo("Instructions"))	
-					.build().toString();
-
-			String xmlString = getUrl(url);
+			dos.writeUTF(Order.myOrder.getTotalPrice() + "");
+			dos.writeUTF(Order.myOrder.toString());
+			dos.writeUTF(Order.myOrder.getDeliveryInfo("Name"));
+			dos.writeUTF(Order.myOrder.getDeliveryInfo("Phone"));
+			dos.writeUTF(Order.myOrder.getDeliveryInfo("Address"));
+			dos.writeUTF(Order.myOrder.getDeliveryInfo("Instructions"));
+			dos.writeUTF("done");
+			
 		} catch (IOException ioe) {
-			Log.e("testes", "Failed to fetch items", ioe);
+			Log.e("testes", "Failed to send items", ioe);
 		}
 	}
 

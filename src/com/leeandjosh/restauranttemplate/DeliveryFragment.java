@@ -145,7 +145,7 @@ public class DeliveryFragment extends Fragment {
 	private class FetchItemsTask extends AsyncTask<Void,Void,Void> {
 		@Override
 		protected Void doInBackground(Void... params) {
-			new OrderPoster().fetchItems();
+			new OrderPoster().sendItems();
 			return null;
 		}
 	}
